@@ -1,0 +1,67 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+env/
+
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Dotenv files
+# .env
+.env.*.local
+
+# Database
+*.sqlite3
+*.db
+*.sql
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile
+
+# Kubernetes
+*.kube/
+.helm/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# CI/CD
+.coverage
+*.codecov
+.coverage.*
+.nyc_output/
+coverage/
+dist/

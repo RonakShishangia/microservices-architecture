@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  auth-service:
+    container_name: auth-service
+    build: ./auth-service
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./auth-service/.env
+    networks:
+      - app-network
+    # volumes:
+    #   - ./auth-service:/app
+
+  product-service:
+    container_name: product-service
+    build: ./product-service
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./product-service/.env
+    networks:
+      - app-network
+    # volumes:
+    #   - ./product-service:/app
+
+  mongo-auth:
+    container_name: mongo-auth
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+    environment:
+      MONGO_INITDB_DATABASE: auth-service-db
+    volumes:
+      - mongo-auth-data:/data/db
+
+  mongo-product:
+    container_name: mongo-product
+    image: mongo:4.4
+    ports:
+      - "27018:27017"
+    networks:
+      - app-network
+    environment:
+      MONGO_INITDB_DATABASE: product-service-db
+    volumes:
+      - mongo-product-data:/data/db
+
+  nginx:
+    container_name: nginx-service
+    build: ./nginx-service
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - auth-service
+      - product-service
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-auth-data:
+  mongo-product-data:

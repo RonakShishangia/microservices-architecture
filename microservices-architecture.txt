@@ -1,0 +1,29 @@
+microservices-architecture/
+│
+├── auth-service/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   └── authController.js
+│   │   ├── models/
+│   │   │   └── userModel.js
+│   │   ├── routes/
+│   │   │   └── authRoutes.js
+│   │   ├── app.js
+│   │   └── server.js
+|   ├── Dockerfile
+│   ├── .env
+│   └── package.json
+│
+└── product-service/
+    ├── src/
+    │   ├── controllers/
+    │   │   └── productController.js
+    │   ├── models/
+    │   │   └── productModel.js
+    │   ├── routes/
+    │   │   └── productRoutes.js
+    │   ├── app.js
+    │   └── server.js
+    ├── Dockerfile
+    ├── .env
+    └── package.json
