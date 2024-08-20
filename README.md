@@ -19,17 +19,18 @@ microservices-architecture/
 │   ├── .env
 │   └── package.json
 │
-└── product-service/
-    ├── src/
-    │   ├── controllers/
-    │   │   └── productController.js
-    │   ├── models/
-    │   │   └── productModel.js
-    │   ├── routes/
-    │   │   └── productRoutes.js
-    │   ├── app.js
-    │   └── server.js
-    ├── Dockerfile
-    ├── .env
-    └── package.json
+|── product-service/
+|   ├── src/
+|   │   ├── controllers/
+|   │   │   └── productController.js
+|   │   ├── models/
+|   │   │   └── productModel.js
+|   │   ├── routes/
+|   │   │   └── productRoutes.js
+|   │   ├── app.js
+|   │   └── server.js
+|   ├── Dockerfile
+|   ├── .env
+|   └── package.json
+└── docker-compose.yml
 ```
